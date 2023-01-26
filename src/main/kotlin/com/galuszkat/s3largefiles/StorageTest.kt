@@ -22,9 +22,9 @@ class StorageTest {
 
                 val counter = AtomicLong(0)
 
-                launch(Dispatchers.Default) {
+                val metrics = launch(Dispatchers.Default) {
                     val startTime = System.currentTimeMillis() / 1000
-                    while(true) {
+                    while (true) {
                         delay(2000)
                         val currentTime = System.currentTimeMillis() / 1000
                         val elapsedTime = currentTime - startTime
@@ -44,6 +44,7 @@ class StorageTest {
 
                     println("end")
                 }.join()
+                metrics.join()
             }
     }
 
