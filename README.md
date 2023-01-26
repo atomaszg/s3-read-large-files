@@ -9,3 +9,5 @@ s3cmd ls
 s3cmd mb s3://test-offers
 s3cmd put --acl-private offers.csv s3://test-offers/offers.csv
 ```
+
+![](upload.png)
